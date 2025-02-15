@@ -5,7 +5,6 @@ import AppByMe from "./AppByMe";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
     <AppByMe />
   </StrictMode>
 );

@@ -77,6 +77,7 @@ export default function AppByMe() {
         <SplitBillForm
           selectedFriend={selectedFriend}
           onSplitBill={handleSplitBill}
+          key={selectedFriend.id}
         />
       )}
     </div>
