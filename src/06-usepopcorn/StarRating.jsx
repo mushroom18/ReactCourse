@@ -23,8 +23,7 @@ export default function StarRating({
   maxRating = 5,
   color = "#fcc419",
   className = "",
-  message = [],
-  onSetRating,
+  onStarRating,
 }) {
   const textStyle = {
     lineHeight: "1",
@@ -43,27 +42,18 @@ export default function StarRating({
             key={i}
             onRate={() => {
               setRating(i + 1);
-              onSetRating(i + 1);
+              onStarRating(i + 1);
             }}
             full={tempRating ? tempRating >= i + 1 : rating >= i + 1}
             onHoverIn={() => {
               setTempRating(i + 1);
-              onSetRating(i + 1);
             }}
             onHoverOut={() => setTempRating(0)}
             color={color}
           />
         ))}
       </div>
-      <p style={textStyle}>
-        {message
-          ? message[
-              tempRating
-                ? Math.ceil(tempRating / 2) - 1
-                : Math.ceil(rating / 2) - 1
-            ]
-          : tempRating || rating || ""}
-      </p>
+      <p style={textStyle}>{tempRating || rating || ""}</p>
     </div>
   );
 }
