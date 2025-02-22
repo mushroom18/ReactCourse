@@ -23,6 +23,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       message={["terrible", "bad", "normal", "good", "great"]}
     />
     <StarRating color="green" className="test" /> */}
-    {/*<Test />*/}ß
+    {/*<Test />*/}
   </StrictMode>
 );
