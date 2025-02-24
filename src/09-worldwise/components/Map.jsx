@@ -1,11 +1,25 @@
-import styles from './Map.module.css'
+import { useNavigate, useSearchParams } from "react-router-dom";
+import styles from "./Map.module.css";
 
-function Map(){
+function Map() {
+  const navigate = useNavigate();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const lat = searchParams.get("lat");
+  const lng = searchParams.get("lng");
+
   return (
-    <div className={styles.mapContainer}>
-      
+    <div
+      className={styles.mapContainer}
+      onClick={() => {
+        navigate("form");
+      }}
+    >
+      <h3>
+        position: {lat}, {lng}
+      </h3>
     </div>
-  )
+  );
 }
 
-export default Map
+export default Map;
