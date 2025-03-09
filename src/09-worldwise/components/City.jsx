@@ -19,7 +19,8 @@ function City() {
 
   useEffect(() => {
     getCity(id);
-  }, [id]);
+  }, [id, getCity]);
+  //getCity will cause an infinite loop. so we need to use useCallBack to fix it in CitiesContext,jsx
 
   if (isLoading) return <Spinner />;
 
