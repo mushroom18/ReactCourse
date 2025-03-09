@@ -25,27 +25,15 @@
       }
     },
     {
-      "id": "9707",
-      "cityName": "Segura de los Banos",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2025-02-27T11:13:25.227Z",
+      "id": "6fe4",
+      "cityName": "Sowdari District",
+      "country": "Sudan (the)",
+      "emoji": "🇸🇩",
+      "date": "2025-03-09T04:44:37.500Z",
       "notes": "",
       "position": {
-        "lat": "40.94671366508002",
-        "lng": "-0.9228515625000001"
-      }
-    },
-    {
-      "id": "8ba2",
-      "cityName": "El Menia",
-      "country": "Algeria",
-      "emoji": "🇩🇿",
-      "date": "2025-02-27T11:13:31.040Z",
-      "notes": "",
-      "position": {
-        "lat": "31.034108344903512",
-        "lng": "3.0322265625000004"
+        "lat": "15.961329081596647",
+        "lng": "29.882812500000004"
       }
     }
   ]
