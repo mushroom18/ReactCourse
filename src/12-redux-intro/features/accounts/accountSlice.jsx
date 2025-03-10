@@ -35,8 +35,24 @@ const accountSlice = createSlice({
   },
 });
 
+export function deposit(amount, currency) {
+  if (currency === "USD") return { type: "account/deposit", payload: amount };
+
+  return async function (dispatch) {
+    //api call
+    const res = await fetch(
+      `http://api.frankfurter.app/latest?amount=${amount}&from=${currency}&to=USD`
+    );
+    const data = await res.json();
+    console.log(data);
+
+    const convertedAmount = data.rates.USD;
+    dispatch({ type: "account/deposit", payload: convertedAmount });
+  };
+}
+
 export default accountSlice.reducer;
-export const { deposit, withdraw, requestLoan, payLoan } = accountSlice.actions;
+export const { withdraw, requestLoan, payLoan } = accountSlice.actions;
 
 /* below is align with store-v2, which is the redux middleware and thunk version */
 
@@ -85,7 +101,7 @@ export function deposit(amount, currency) {
     console.log(data);
 
     const convertedAmount = data.rates.USD;
-    dispatch({ type: "amount/deposit", payload: convertedAmount });
+    dispatch({ type: "account/deposit", payload: convertedAmount });
   };
 }
 export function withdraw(amount) {
