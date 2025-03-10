@@ -23,14 +23,14 @@ function customerReducer(state = initialStateCustomer, action) {
   }
 }
 
-function createCustomer(fullName, nationalID) {
+export function createCustomer(fullName, nationalID) {
   return {
     type: "customer/createCustomer",
     payload: { fullName, nationalID, createAt: new Date().toISOString() },
   };
 }
 
-function upadateName(fullName) {
+export function upadateName(fullName) {
   return {
     type: "customer/updateName",
     payload: fullName,

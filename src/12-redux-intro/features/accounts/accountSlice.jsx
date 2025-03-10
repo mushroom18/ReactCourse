@@ -36,19 +36,19 @@ function accountReducer(state = initialStateAccount, action) {
   }
 }
 
-function deposit(amount) {
+export function deposit(amount) {
   return { type: "account/deposit", payload: amount };
 }
-function withdraw(amount) {
+export function withdraw(amount) {
   return { type: "account/withdraw", payload: amount };
 }
-function requestLoan(amount, purpose) {
+export function requestLoan(amount, purpose) {
   return {
     type: "account/requestLoan",
     payload: { amount: amount, purpose: purpose },
   };
 }
-function payLoan() {
+export function payLoan() {
   return { type: "account/payLoan" };
 }
 
